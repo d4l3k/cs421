@@ -109,13 +109,13 @@ TODO(d4l3k): Finish this!
 
 ### A.2.1
 
-Prove $\sum_{m=1}^n m = \choose{n+1}2$ for any $n \in \mathbb{N}$.
+Prove $\sum_{m=1}^n m = \binom{n+1}{2}$ for any $n \in \mathbb{N}$.
 
 Proof via induction.
 
 Base case $n=1$.
 
-$\sum_{m=1}^1 m = \choose22$
+$\sum_{m=1}^1 m = \binom{2}{2}$
 
 $1 = 1$
 
@@ -124,10 +124,10 @@ Identity.
 Induction step.
 
 Must prove that:
-$$\sum_{m=1}^{n+1} m - \sum_{m=1}^{n} = \choose{n+2}2 -
-\choose{n+1}2$$
+$$\sum_{m=1}^{n+1} m - \sum_{m=1}^{n} = \binom{n+2}{2} -
+\binom{n+1}{2}$$
 
-$$n = \choose{n+2}2 - \choose{n+1}2$$
+$$n = \binom{n+2}{2} - \binom{n+1}{2}$$
 
 $$n = \frac{(n+2)!}{2!(n+2-2)!} - \frac{(n+1)!}{2!(n+1-2)!}$$
 
@@ -146,21 +146,21 @@ TODO(d4l3k): Verify this.
 
 ### A.2.2
 
-Prove $\sum_{m=1}^n \choose{m}{k} = \choose{n+1}{k+1}$.
+Prove $\sum_{m=1}^n \binom{m}{k} = \binom{n+1}{k+1}$.
 
 Proof by induction.
 
 Let $k\in\mathbb{N}$ be fixed and arbitrary.
 
 Base case $n=1$:
-$$\choose{1}{k} = \choose{1+1}{k+1}$$
+$$\binom{1}{k} = \binom{1+1}{k+1}$$
 
-If $k=1$, $\choose{1}{1} = \choose{2}{2} = 1$.
-If $k>1$, $\choose{1}{k} = \choose{2}{1+k} = 0$.
+If $k=1$, $\binom{1}{1} = \binom{2}{2} = 1$.
+If $k>1$, $\binom{1}{k} = \binom{2}{1+k} = 0$.
 
 Inductive step:
 
-We must show that $\choose{n+1}{k} = \choose{n+2}{k+1} - \choose{n+1}{k+1}$.
+We must show that $\binom{n+1}{k} = \binom{n+2}{k+1} - \binom{n+1}{k+1}$.
 
 $$\frac{(n+1)!}{k!(n+1-k)!} =
 \frac{(n+2)!}{(k+1)!(n+2-k-1)!} - \frac{(n+1)!}{(k+1)!(n+1-k+1)!}$$
@@ -178,7 +178,7 @@ $$k+1 = n+2 - n+k-1$$
 $$k+1 = k+1$$
 Identity.
 
-Thus, $\sum_{m=1}^n \choose{m}{k} = \choose{n+1}{k+1}$ holds for all $n \geq 1$.
+Thus, $\sum_{m=1}^n \binom{m}{k} = \binom{n+1}{k+1}$ holds for all $n \geq 1$.
 
 
 ## A.3(1)
@@ -189,9 +189,9 @@ Proof by induction.
 
 Base case:
 
-$$A_1 = A_2 = \0$$
+$$A_1 = A_2 = \varnothing$$
 
-$$|\0 \cup \0| = |\0| + |\0| - |\0 \cap \0|$$
+$$|\varnothing \cup \varnothing| = |\varnothing| + |\varnothing| - |\varnothing \cap \varnothing|$$
 
 Inductive step:
 
