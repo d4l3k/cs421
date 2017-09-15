@@ -104,7 +104,111 @@ $$x^2=x+1$$
 
 $$x=\{\frac12(1-\sqrt 5), \frac12(1+\sqrt 5)\}$$
 
-TODO(d4l3k): Finish this!
+We will show that
+$F_n = \frac{(\frac{1+\sqrt 5}2)^n-(\frac{1-\sqrt 5})^n}{\sqrt{5}}$
+
+Proof via induction.
+
+Base case (n=1)
+
+$$F_1 = \frac{(\frac{1+\sqrt 5}2)^1-(\frac{1-\sqrt 5}2)^1}{\sqrt{5}}$$
+$$1 = 1$$
+
+Induction step.
+
+$$\frac{(\frac{1+\sqrt 5}2)^{n+1}-(\frac{1-\sqrt 5}2)^{n+1}}{\sqrt{5}}
+= \frac{(\frac{1+\sqrt 5}2)^n-(\frac{1-\sqrt 5}2)^n}{\sqrt{5}} +
+\frac{(\frac{1+\sqrt 5}2)^{n-1}-(\frac{1-\sqrt 5}2)^{n-1}}{\sqrt{5}}$$
+
+$$(\frac{1+\sqrt 5}2)^{n+1}-(\frac{1-\sqrt 5}2)^{n+1}
+= (\frac{1+\sqrt 5}2)^n-(\frac{1-\sqrt 5}2)^n +
+(\frac{1+\sqrt 5}2)^{n-1}-(\frac{1-\sqrt 5}2)^{n-1}$$
+
+$$(\frac{1+\sqrt 5}2)^{n+1}-(\frac{1-\sqrt 5}2)^{n+1}
+= ((\frac{1+\sqrt 5}2) + 1)(\frac{1+\sqrt 5}2)^{n-1}
+-((\frac{1-\sqrt 5}2) + 1)(\frac{1-\sqrt 5}2)^{n-1}$$
+
+Using $x^2=x+1$:
+
+$$(\frac{1+\sqrt 5}2)^{n+1}-(\frac{1-\sqrt 5}2)^{n+1}
+= (\frac{1+\sqrt 5}2)^{2}(\frac{1+\sqrt 5}2)^{n-1}
+-(\frac{1-\sqrt 5}2)^{2}(\frac{1-\sqrt 5}2)^{n-1}$$
+
+$$(\frac{1+\sqrt 5}2)^{n+1}-(\frac{1-\sqrt 5}2)^{n+1}
+= (\frac{1+\sqrt 5}2)^{n+1}
+-(\frac{1-\sqrt 5}2)^{n+1}$$
+
+Identity.
+
+Thus, $F_n = \frac{(\frac{1+\sqrt 5}2)^n-(\frac{1-\sqrt 5})^n}{\sqrt{5}}$.
+
+
+#### Asymptotic ratio of $F_n$:
+
+$$\lim_{n\to\infty} \frac{F_{n+1}}{F_n}$$
+
+$$=\lim_{n\to\infty}
+\frac{(\frac{1+\sqrt 5}2)^{n+1}-(\frac{1-\sqrt 5}2)^{n+1}}{\sqrt{5}}
+* \frac{\sqrt{5}}{(\frac{1+\sqrt 5}2)^n-(\frac{1-\sqrt 5}2)^n}$$
+
+$$=\lim_{n\to\infty}
+\frac{
+    (\frac{1+\sqrt 5}2)^{n+1}-(\frac{1-\sqrt 5}2)^{n+1}
+}{
+    (\frac{1+\sqrt 5}2)^n-(\frac{1-\sqrt 5}2)^n
+}$$
+
+$$=\lim_{n\to\infty}
+\frac12 *
+\frac{
+    (1+\sqrt 5)^{n+1}-(1-\sqrt 5)^{n+1}
+}{
+    (1+\sqrt 5)^n-(1-\sqrt 5)^n
+}$$
+
+$$=\lim_{n\to\infty}
+\frac12 (
+\frac{
+    (1+\sqrt 5)^{n+1}
+}{
+    (1+\sqrt 5)^n-(1-\sqrt 5)^n
+}
+- \frac{
+(1-\sqrt 5)^{n+1}
+}{
+    (1+\sqrt 5)^n-(1-\sqrt 5)^n
+})$$
+
+$$=\lim_{n\to\infty}
+\frac12 (
+\frac{
+    1+\sqrt 5
+}{
+    1-\frac{(1-\sqrt 5)^n}{(1+\sqrt 5)^n}
+}
+- \frac{
+1-\sqrt 5
+}{
+    \frac{(1+\sqrt 5)^n}{(1-\sqrt 5)^n}-1
+})$$
+
+$$\lim_{n\to\infty} (\frac{1-\sqrt 5}{1+\sqrt 5})^n = 0$$
+
+$$\lim_{n\to\infty} (\frac{1+\sqrt 5}{1-\sqrt 5})^n = \infty$$
+
+$$= \frac12 (
+\frac{
+    1+\sqrt 5
+}{
+    1-0
+}
+- \frac{
+1-\sqrt 5
+}{
+    \infty-1
+})$$
+
+$$= \frac12 (1+\sqrt 5)$$
 
 ## A.2(1,2)
 
@@ -125,25 +229,31 @@ Identity.
 Induction step.
 
 Must prove that:
-$$\sum_{m=1}^{n+1} m - \sum_{m=1}^{n} = \binom{n+2}{2} -
-\binom{n+1}{2}$$
 
-$$n = \binom{n+2}{2} - \binom{n+1}{2}$$
+$$\binom{n+1+1}{k+1} = \binom{n+1}{k+1} + \binom{n+1}{k}$$
 
-$$n = \frac{(n+2)!}{2!(n+2-2)!} - \frac{(n+1)!}{2!(n+1-2)!}$$
+$$\frac{(n+2)!}{(k+1)!(n+2-k-1)!}
+= \frac{(n+1)!}{(k+1)!(n+1-k-1)!} + \frac{(n+1)!}{k!(n+1-k)!}$$
 
-$$n = \frac{(n+2)!}{2n!} - \frac{(n+1)!}{2(n-1)!}$$
+$$\frac{(n+2)!}{(k+1)!(n-k+1)!}
+= \frac{(n+1)!}{(k+1)!(n-k)!} + \frac{(n+1)!}{k!(n-k+1)!}$$
 
-$$n = \frac{(n+2)(n+1)}{2} - \frac{(n+1)n}{2}$$
+$$\frac{(n+2)(n+1)!}{(k+1)k!(n-k+1)!}
+= \frac{(n+1)!}{(k+1)k!(n-k)!} + \frac{(n+1)!}{k!(n-k+1)!}$$
 
-$$2n = (n+2)(n+1) - (n+1)n$$
-$$2n = n^2+3n+2 - n^2-n$$
-$$2n = 2n+2 $$
-$$n = n+1$$
+$$\frac{(n+2)}{(k+1)(n-k+1)(n-k)!}
+= \frac{1}{(k+1)(n-k)!} + \frac{1}{(n-k+1)(n-k)!}$$
 
-Since $\lim_{n\to\infty} \frac{n+1}{n} = 1$ we can ignore the $1$ term.
+$$\frac{(n+2)}{(k+1)(n-k+1)}
+= \frac{1}{(k+1)} + \frac{1}{(n-k+1)}$$
 
-TODO(d4l3k): Verify this.
+$$(n+2) = (n-k+1) + k+1)$$
+$$n+2 = n+2$$
+
+Identity.
+
+Thus, $\sum_{m=1}^n m = \binom{n+1}{2}$ for any $n \in \mathbb{N}$. QED.
+
 
 ### A.2.2
 
