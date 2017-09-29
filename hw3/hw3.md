@@ -50,8 +50,6 @@ impossible set.
 
 You can resolve this paradox by ignoring it.
 
-TODO(d4l3k): verify this is the right answer
-
 ## 3. Problem 7.1.4
 
 Argue informally that one can conclude that S is true but there is no proof S is
@@ -87,7 +85,24 @@ some other set.
 
 ## 5. Problem 7.2.2
 
+You can construct a table with the X axis being the elements of A and the Y axis
+being the elements of B.
+
+You can then iterate over all elements in the diagonal order
+$$(a_0, b_0),  (a_0, b_1), (b_1, a_0), (a_0, b_2), (a_1, b_1), (a_2, b_0),
+\ldots$$
+
+Since all elements will be iterated over, you can assign each element a specific
+index. Thus, there is an injective map $A \times B \to \mathbb{N}$ and thus is
+countable.
+
 ## 6. Problem 7.2.8
+
+Consider the set of all functions $\mathbb{N} \to \{1,2,3\}$.
+
+This set is uncountable since there's an arbitrarily infinite number of
+functions that can map to $\{1,2,3\}$. Since you can come up with new arbitrary
+functions there's no simple way to enumerate all possible functions.
 
 ## 7. Which of the following sets are countable and which aren't?
 
@@ -114,10 +129,15 @@ are $n$ possible values of the numerator and $n$ possible values of the
 denominator. Since it's possible to map integers to each one of those rationals
 $\mathbb{Q}$ is countable.
 
-### 7.4 $A*$ over an alphabet $A$
+### 7.4 $A^*$ over an alphabet $A$
 
-Since $A*$ includes all power sets of $A$ we know that it is uncountable since
-the power set of a set is uncountable.
+Every time you add 1 to the length of $A^*$ the number of sets increases by
+$|A|$ times.
+
+Thus, the number of sets is $|A|^n$. This means you can assign an index to each
+set and thus is countable.
 
 ### 7.5 the set of languages over an alphabet $A$.
 
+Since the set of languages over an alphabet A is equivalent to a power set over
+$A*$ this means this is uncountable since $A*$ is infinite.
