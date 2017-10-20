@@ -112,4 +112,25 @@ $$AcceptingFuture(L, 1) = (\epsilon \cup 0 \cup 001)(1 \cup 10 \cup 1001)^*$$
 
 ### 5.b
 
+* q0: $AcceptingFuture(L, \epsilon)$
+* q1: $AcceptingFuture(L, 1)$
+* $\varnothing$: $AcceptingFuture(L, 0)$
+
+![](./q5b.png)\
+
+
+
 ### 5.c
+
+$$AcceptingFuture(L, \epsilon) = (1 \cup 10 \cup 1001)^*$$
+$$AcceptingFuture(L, 0) = \varnothing$$
+$$AcceptingFuture(L, 1) = (\epsilon \cup 0 \cup 001)(1 \cup 10 \cup 1001)^*$$
+$$AcceptingFuture(L, 10) = (\epsilon \cup 01)(1 \cup 10 \cup 1001)^*$$
+$$AcceptingFuture(L, 100) = 1(1 \cup 10 \cup 1001)^*$$
+$$AcceptingFuture(L, 1000) = \varnothing$$
+$$AcceptingFuture(L, 1001) = (1 \cup 10 \cup 1001)^*$$
+
+
+![](./q5c.png)\
+
+
