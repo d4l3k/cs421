@@ -2,6 +2,8 @@
 
 Tristan Rice, q7w9a, 25886145
 
+Discussed with q6y8@ugrad.cs.ubc.ca and b2a0b@ugrad.cs.ubc.ca .
+
 ## 1
 
 For languages A and B, let the shuffle of A and B be the language:
@@ -10,6 +12,34 @@ $$L=\{w|w=a_1b_1\ldots a_kb_k, \text{ where } a_1\ldots a_k \in A \text{ and }
 b_1\ldots b_k \in B, \text{ each } a_i,b_i \in \Sigma^*\}$$
 
 Claim: The class of regular languages is closed under shuffle.
+
+Every regular language will have a corresponding DFA recognizing it. The shuffle
+of two regular languages means that we don't know which DFA will be running
+given an input. Thus, we need to construct a compound NFA which can decide which
+DFA to run given an input $\in A$ or $\in B$.
+
+The states are the cartesian product of the states of A and the states of B.
+
+The finish states are the cartesian product of the finish states of A and the
+finish states of B.
+
+Initial state is $(A_{start}, B_{start})$.
+
+For a given state $(s_A, s_B)$ we update to be $(new(s_A), s_B)$ if the token is
+in $A$, and otherwise update it to be $(s_A, new(s_B))$.
+
+This can be shown to be correct by iterating through some input $a$ and seeing
+that in $(s_A, s_B)$, $s_A$ iterates through all the states that the $A$ DFA
+would normally have iterated and get to a finish state. We see the same thing
+using some input $b$, $s_B$ iterates to the finish state as well. Since
+$s_A, s_B$ change independently we know that this holds for inputs
+$a \in A, b \in B$.
+
+This can be formally proven through induction.
+
+Thus, since an NFA can be constructed for the shuffle of $A$ and $B$, we know
+that the shuffle of $A, B$ must be regular. Thus, the class of regular languages
+is closed under shuffle.
 
 ## 2
 
