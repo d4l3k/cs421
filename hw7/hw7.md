@@ -86,6 +86,15 @@ delta(Q, Sym1, Sym2) {
 
 ## Question 2
 
+### (a)
+
+![](./q2a.png)\
+
+
+
+
+### (b)
+
 Let $L=\{0^n10^n|n \text{ is a non-negative integer}\}$. What is $Future(L,0001)$? Explain.
 
 $Future(L,0001)$ is the set of possible inputs such that the language $L$ will
@@ -96,6 +105,23 @@ valid string for language $L$ is $000$.
 
 Thus,
 $$Future(L,0001) = \{000\}$$
+
+### (c)
+
+We can use the Myhill-Nerode theorem to show that $L$ isn't regular by showing
+that there is an infinite number of accepting futures.
+
+Claim: $L$ can be recognized by a DFA.
+
+$$Future(L,1) = \epsilon $$
+$$Future(L,01) = 0$$
+$$Future(L,0^21) = 0^2$$
+$$Future(L,0^n1) = 0^n$$
+
+Since $n$ can by any non-negative integer. That means that there are an infinite
+number of accepting futures and thus, the DFA representing $L$ would have an
+infinite number of states. Contradiction. A DFA must have a finite number of
+states, and thus language $L$ can't be recognized by any DFA.
 
 ## Question 3
 
@@ -129,11 +155,19 @@ $\mathbb{S} \to \mathbb{N}$. Thus, $\Sigma^*$ is countable.
 
 ### (b)
 
-We know that any subset of a countable set is countable. We also know that set
-of positive integers is also countable. We know that the finite union of
-countable sets is countable.
+No. It's not countable.
+
+We know that any subset of a countable set is countable. The set of all subsets
+isn't countable however, since that's the definition of the power set. The power
+set of an countably infinite set is not countable. Thus, the set of subsets of
+$\Sigma^*$ isn't countable.
 
 ### (c)
+
+Part (a) shows that there are an infinite number of programs but countably
+infinite. Part (b) shows that since the number of possible languages is
+uncountable that means that there are some languages that aren't recognizable by
+any program.
 
 ## Question 5
 
