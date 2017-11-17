@@ -55,27 +55,27 @@ This is trivially in 3CNF and doesn't need anything else.
 Base case $l=4$:
 
 We can replace $$a_1 \lor a_2 \lor a_3 \lor a_4$$ with
-$$(a_1 \lor a_2 \lor z) \land (\not z \lor a_3 \lor a_4)$$.
+$$(a_1 \lor a_2 \lor z) \land (\neg z \lor a_3 \lor a_4)$$.
 
 Since $z$ can be anything that satisfies this, we can construct all the cases
 such that the statement is true.
 
-$$(0 \lor 0 \lor 0) \land (\not 0 \lor 0 \lor 0) = 0$$
-$$(1 \lor 0 \lor 0) \land (\not 0 \lor 0 \lor 0) = 1$$
-$$(0 \lor 1 \lor 0) \land (\not 0 \lor 0 \lor 0) = 1$$
-$$(0 \lor 0 \lor 1) \land (\not 1 \lor 1 \lor 0) = 1$$
-$$(0 \lor 0 \lor 1) \land (\not 1 \lor 0 \lor 1) = 1$$
-$$(1 \lor 1 \lor 0) \land (\not 0 \lor 0 \lor 0) = 1$$
-$$(1 \lor 0 \lor 0) \land (\not 0 \lor 1 \lor 0) = 1$$
-$$(1 \lor 0 \lor 0) \land (\not 0 \lor 0 \lor 1) = 1$$
-$$(0 \lor 1 \lor 0) \land (\not 0 \lor 1 \lor 0) = 1$$
-$$(0 \lor 1 \lor 0) \land (\not 0 \lor 0 \lor 1) = 1$$
-$$(0 \lor 0 \lor 1) \land (\not 1 \lor 1 \lor 1) = 1$$
-$$(1 \lor 1 \lor 0) \land (\not 0 \lor 1 \lor 0) = 1$$
-$$(1 \lor 1 \lor 0) \land (\not 0 \lor 0 \lor 1) = 1$$
-$$(1 \lor 0 \lor 0) \land (\not 0 \lor 1 \lor 1) = 1$$
-$$(0 \lor 1 \lor 0) \land (\not 0 \lor 1 \lor 1) = 1$$
-$$(1 \lor 1 \lor 0) \land (\not 0 \lor 1 \lor 1) = 1$$
+$$(0 \lor 0 \lor 0) \land (\neg 0 \lor 0 \lor 0) = 0$$
+$$(1 \lor 0 \lor 0) \land (\neg 0 \lor 0 \lor 0) = 1$$
+$$(0 \lor 1 \lor 0) \land (\neg 0 \lor 0 \lor 0) = 1$$
+$$(0 \lor 0 \lor 1) \land (\neg 1 \lor 1 \lor 0) = 1$$
+$$(0 \lor 0 \lor 1) \land (\neg 1 \lor 0 \lor 1) = 1$$
+$$(1 \lor 1 \lor 0) \land (\neg 0 \lor 0 \lor 0) = 1$$
+$$(1 \lor 0 \lor 0) \land (\neg 0 \lor 1 \lor 0) = 1$$
+$$(1 \lor 0 \lor 0) \land (\neg 0 \lor 0 \lor 1) = 1$$
+$$(0 \lor 1 \lor 0) \land (\neg 0 \lor 1 \lor 0) = 1$$
+$$(0 \lor 1 \lor 0) \land (\neg 0 \lor 0 \lor 1) = 1$$
+$$(0 \lor 0 \lor 1) \land (\neg 1 \lor 1 \lor 1) = 1$$
+$$(1 \lor 1 \lor 0) \land (\neg 0 \lor 1 \lor 0) = 1$$
+$$(1 \lor 1 \lor 0) \land (\neg 0 \lor 0 \lor 1) = 1$$
+$$(1 \lor 0 \lor 0) \land (\neg 0 \lor 1 \lor 1) = 1$$
+$$(0 \lor 1 \lor 0) \land (\neg 0 \lor 1 \lor 1) = 1$$
+$$(1 \lor 1 \lor 0) \land (\neg 0 \lor 1 \lor 1) = 1$$
 
 This covers all 16 possible cases of the original statement.
 
@@ -86,8 +86,8 @@ $n>4$.
 Assume we have statements in the form
 
 $$\ldots (\ldots \lor z_{r})
-\land (\not z_{r} \lor a_{r-2} \lor z_{r+1})
-\land (\not z_{r+1} \lor \ldots) \ldots$$
+\land (\neg z_{r} \lor a_{r-2} \lor z_{r+1})
+\land (\neg z_{r+1} \lor \ldots) \ldots$$
 
 
 If $a_{r-2}$ is true, it doesn't matter what values of $z$ there are for this
